@@ -175,10 +175,10 @@ class ConvLSTMModel(nn.Module):
 
 def load_all_models():
     model_paths = [
-        "models_new/conv_lstm_model_1h.pth",
-        "models_new/conv_lstm_model_2h.pth",
-        "models_new/conv_lstm_model_3h.pth",
-        "models_new/conv_lstm_model_4h.pth",
+        "models/ConvLSTM/conv_lstm_model_1h.pth",
+        "models/ConvLSTM/conv_lstm_model_2h.pth",
+        "models/ConvLSTM/conv_lstm_model_3h.pth",
+        "models/ConvLSTM/conv_lstm_model_4h.pth",
     ]
     
     models = []
