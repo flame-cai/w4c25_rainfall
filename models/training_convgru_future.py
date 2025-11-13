@@ -28,7 +28,7 @@ def train_model(model, train_loader, future_hours):
         avg_loss = total_loss / len(train_loader)
         print(f"✅ Future {future_hours}h | Epoch {epoch+1}/{Config.EPOCHS} | Loss: {avg_loss:.6f}")
 
-    model_path = f"models_gru_20/conv_gru_model_{future_hours}h.pth"
+    model_path = f"ConvGRU/conv_gru_model_{future_hours}h.pth"
     torch.save(model.state_dict(), model_path)
     print(f"💾 Saved model for {future_hours}h future prediction → {model_path}\n")
 
