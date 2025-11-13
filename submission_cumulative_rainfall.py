@@ -12,7 +12,7 @@ from skimage import filters
 device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
 
 # Set the output folder
-OUTPUT_DIR = '/mnt/cai-data/Weather4Cast/Submissions_convgru_tune_280_120'
+OUTPUT_DIR = '/mnt/cai-data/Weather4Cast/Submissions_convgru'
 DATA_DIR = '/mnt/cai-data/Weather4Cast/data'
 os.makedirs(OUTPUT_DIR, exist_ok=True)
 
@@ -196,10 +196,10 @@ class ConvGRUModel(nn.Module):
 
 def load_all_models():
     model_paths = [
-        "models_gru/conv_gru_model_1h.pth",
-        "models_gru/conv_gru_model_2h.pth",
-        "models_gru/conv_gru_model_3h.pth",
-        "models_gru/conv_gru_model_4h.pth",
+        "models/ConvGRU/conv_gru_model_1h.pth",
+        "models/ConvGRU/conv_gru_model_2h.pth",
+        "models/ConvGRU/conv_gru_model_3h.pth",
+        "models/ConvGRU/conv_gru_model_4h.pth",
     ]
     
     models = []
