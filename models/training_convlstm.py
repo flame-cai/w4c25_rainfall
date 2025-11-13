@@ -23,7 +23,7 @@ class Config:
     USE_OTSU = True
     BATCH_SIZE = 25
     LR = 1e-3
-    EPOCHS = 30
+    EPOCHS = 20
     DEVICE = "cuda:2" if torch.cuda.is_available() else "cpu"
     
     ORIGINAL_SIZE = 252
@@ -211,7 +211,7 @@ def train_model(model, train_loader):
             total_loss += loss.item()
         print(f"Epoch {epoch+1}: Loss = {total_loss/len(train_loader):.4f}")
 
-    torch.save(model.state_dict(), "models_new_30/conv_lstm_model_1h.pth")
+    torch.save(model.state_dict(), "ConvLSTM/conv_lstm_model_1h.pth")
     print("✅ Model saved as conv_lstm_model.pth")
 
 # =========================
