@@ -240,7 +240,7 @@ def train_model(model, train_loader):
             total_loss += loss.item()
         print(f"Epoch {epoch+1}: Loss = {total_loss/len(train_loader):.4f}")
 
-    torch.save(model.state_dict(), "models_gru_20/conv_gru_model_1h.pth")
+    torch.save(model.state_dict(), "ConvGRU/conv_gru_model_1h.pth")
     print("✅ Model saved as conv_gru_model_1h.pth")
 
 # =========================
