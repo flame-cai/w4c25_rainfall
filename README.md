@@ -1,4 +1,22 @@
-# weather4cast 2025 competition 
-## Cumulative rainfall and event prediction
+# Weather4Cast 2025 — Precipitation Nowcasting  
 
-This repository contains the implementation developed for the Weather4Cast 2025 competition at NeurIPS, focusing on short-term precipitation nowcasting from satellite data. Our approach employs a two-stage transfer learning pipeline using ConvGRU networks to predict future SEVIRI brightness temperature fields and transform them into rainfall estimates. The models were trained on the BOXI-0015 region for 2019 and fine-tuned for other geographical areas.
+This repository contains the implementation of our submission for the **NeurIPS 2025 Weather4Cast Challenge**, focusing on **short-term precipitation nowcasting** using SEVIRI satellite data.  
+Our pipeline leverages **ConvGRU** and **ConvLSTM** architectures to model spatiotemporal dependencies in brightness temperature imagery for future rainfall prediction.
+
+---
+
+## Setup Instructions  
+
+### 1. Create a Python Environment  
+
+It is recommended to use **Python 3.10+** and create a dedicated environment:
+
+```bash
+# Create a new virtual environment
+python -m venv w4c_env
+
+# Activate the environment
+# On Windows:
+w4c_env\Scripts\activate
+# On macOS/Linux:
+source w4c_env/bin/activate
