@@ -175,10 +175,10 @@ class ConvLSTMModel(nn.Module):
 
 def load_all_models():
     model_paths = [
-        "models/ConvLSTM/conv_lstm_model_1h.pth",
-        "models/ConvLSTM/conv_lstm_model_2h.pth",
-        "models/ConvLSTM/conv_lstm_model_3h.pth",
-        "models/ConvLSTM/conv_lstm_model_4h.pth",
+        "models/ConvGRU/conv_gru_model_1h.pth",
+        "models/ConvGRU/conv_gru_model_2h.pth",
+        "models/ConvGRU/conv_gru_model_3h.pth",
+        "models/ConvGRU/conv_gru_model_4h.pth",
     ]
     
     models = []
@@ -235,7 +235,8 @@ def transform_to_rain_rate(predictions):
     for i in range(predictions.shape[0]):
         resampled = resample_image(predictions[i], target_shape=(1512, 1512))
         # Transform to rain rate
-        transformed = np.maximum(0, 0.42 * (280 - resampled))
+        # transformed = np.maximum(0, 0.42 * (280 - resampled)) # linear scaling
+        transformed = np.maximum(0, 1.1 * (300 - resampled)**0.15)
         transformed_frames.append(transformed)
     
     return np.stack(transformed_frames, axis=0)
