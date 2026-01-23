@@ -256,7 +256,7 @@ def process_case(models, img, slot_start, slot_end, x_start, x_end, y_start, y_e
     for i in range(all_preds_unscaled.shape[0]):
         resampled = resample_image(all_preds_unscaled[i], target_shape=(1512, 1512))
 
-        transformed = 1.1 * np.power(np.maximum(0, 300 - resampled), 0.15)
+        transformed = 7 * np.power(np.maximum(0, 300 - resampled), 0.25) # updated transformation for the best score
         transformed_frames.append(transformed)
     
     # Average all transformed frames
